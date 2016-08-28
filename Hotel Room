@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hotel_Room
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month = Console.ReadLine();
+            int nights = int.Parse(Console.ReadLine());
+
+            
+
+            if(month == "May" || month == "October")
+            {
+                if(nights > 14)
+                Console.WriteLine("Apartment: {0:f2} lv.", (nights * 65.00 - (0.10 * nights * 65.00)));
+                else
+                    Console.WriteLine("Apartment: {0:f2} lv.", nights*65.00);
+                if (nights > 7 && nights < 14)
+                {
+                    Console.WriteLine("Studio: {0:f2} lv.", nights * 50 - 0.05 * nights * 50);
+                }
+                else if(nights > 14)
+                {
+                    Console.WriteLine("Studio: {0:f2} lv.", nights * 50 - 0.30 * nights * 50);
+                }
+                else
+                    Console.WriteLine("Studio: {0:f2} lv.", nights * 50);
+
+            }
+            if (month == "June" || month == "September")
+            {
+                if (nights > 14)
+                    Console.WriteLine("Apartment: {0:f2} lv.", (nights * 68.70 - (0.10 * nights * 68.70)));
+                else
+                    Console.WriteLine("Apartment: {0:f2} lv.", nights * 68.70);
+              
+               if (nights > 14)
+                {
+                    Console.WriteLine("Studio: {0:f2} lv.", nights * 75.20 - 0.20 * nights * 75.20);
+                }
+                else
+                    Console.WriteLine("Studio: {0:f2} lv.", nights * 75.20);
+
+            }
+            if (month == "July" || month == "August")
+            {
+                if (nights > 14)
+                    Console.WriteLine("Apartment: {0:f2} lv.", (nights * 77.00 - (0.10 * nights * 77.00)));
+                else
+                    Console.WriteLine("Apartment: {0:f2} lv.", nights * 77.00);
+
+
+
+                Console.WriteLine("Studio: {0:f2} lv.", nights * 76.00);
+
+            }
+
+
+        }
+    }
+}
+  
