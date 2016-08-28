@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hospital
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double period = double.Parse(Console.ReadLine());
+            int pregledani=0;
+            int nepregledani=0;
+            
+            int doctors = 7;
+            for (int i = 1; i <= period; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    if (pregledani < nepregledani)
+                    {
+                        doctors++;
+                    }
+                }
+                int patients = int.Parse(Console.ReadLine());
+                
+                if (patients>doctors)
+                {
+                    pregledani += doctors;
+                    nepregledani += patients - doctors;
+                }
+               else if(patients<=doctors)
+                {
+                   pregledani += patients;
+                }
+
+                
+               
+                
+            }
+            Console.WriteLine("Treated patients: "+pregledani +".");
+            Console.WriteLine("Untreated patients: " +nepregledani +".");
+            
+            
+        }
+    }
+}
