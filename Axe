@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Axe
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int leftdashes = 3 * n;
+            int inDashes = 0;
+            int allbeforeall = leftdashes + inDashes + +2;
+            int all = 5 * n;
+            int rightDashes = all - allbeforeall;
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(new string('-', leftdashes));
+                Console.Write("*");
+                Console.Write(new string('-', inDashes));
+                Console.Write("*");
+                Console.Write(new string('-', rightDashes));
+                Console.WriteLine();
+                inDashes++;
+                rightDashes--;
+            }
+            for (int i = 0; i < n/2; i++)
+            {
+                Console.Write(new string('*', leftdashes));
+                Console.Write("*");
+                Console.Write(new string('-', inDashes-1));
+                Console.Write("*");
+                Console.Write(new string('-', rightDashes+1));
+                Console.WriteLine();
+            }
+            if(n%2 ==0)
+            for (int i = 0; i < n/2-1; i++)
+            {
+                    
+                        Console.Write(new string('-', leftdashes));
+                Console.Write("*");
+                Console.Write(new string('-', inDashes-1));
+                Console.Write("*");
+                Console.Write(new string('-', rightDashes+1));
+                Console.WriteLine();
+                    inDashes += 2 ;
+                    rightDashes--;
+                    leftdashes--;
+                    if (i == n / 2 - 2)
+                    {
+
+                        Console.Write(new string('-', leftdashes));
+                        Console.Write("*");
+                        Console.Write(new string('*', inDashes-1));
+                        Console.Write("*");
+                        Console.Write(new string('-', rightDashes +1));
+                        Console.WriteLine();
+                    }
+
+            }
+            else
+                for (int i = 0; i < n / 2 - 1; i++)
+                {
+
+                    Console.Write(new string('-', leftdashes));
+                    Console.Write("*");
+                    Console.Write(new string('-', inDashes -1));
+                    Console.Write("*");
+                    Console.Write(new string('-', rightDashes+1));
+                    Console.WriteLine();
+                    inDashes += 2;
+                    rightDashes--;
+                    leftdashes--;
+                    if (i == n / 2 -2)
+                    {
+
+                        Console.Write(new string('-', leftdashes));
+                        Console.Write("*");
+                        Console.Write(new string('*', inDashes-1));
+                        Console.Write("*");
+                        Console.Write(new string('-', rightDashes+1));
+                        Console.WriteLine();
+                    }
+
+                }
+
+
+
+        }
+    }
+}
