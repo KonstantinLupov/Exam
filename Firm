@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Firm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double daysNeeded = double.Parse(Console.ReadLine());
+            double daysHave = double.Parse(Console.ReadLine());
+            double izvunredniSlujiteli = double.Parse(Console.ReadLine());
+            double newDays = (daysHave - (0.10*daysHave));
+            double workHours = (newDays * 8);
+            double izvunredniHours = izvunredniSlujiteli * (2 * daysHave);
+            double allHours = (workHours + izvunredniHours);
+            
+            if (allHours >= daysNeeded)
+            {
+                Console.WriteLine("Yes!{0} hours left.",  Math.Floor(allHours) - daysNeeded);
+            }
+            else
+            {
+                Console.WriteLine("Not enough time!{0} hours needed.",  daysNeeded - Math.Floor(allHours));
+            }
+
+        }
+    }
+}
+
