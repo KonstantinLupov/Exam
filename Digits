@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Digits
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int a = n / 100;
+            int b = n / 10 % 10;
+            int c = n % 10;
+            int red = a + b;
+            int kolona = a + c;
+
+            for (int i = 0; i < red; i++)
+            {
+                for (int j = 0; j < kolona; j++)
+                {
+                    if (n%5==0)
+                    {
+                        n = n - a;
+                        Console.Write(n + " ");
+                    }
+                  else if (n % 3 == 0)
+                    {
+                        n = n - b;
+                        Console.Write(n + " ");
+                    }
+                    else
+                    {
+                        n = n + c;
+                        Console.Write(n + " ");
+                    }
+
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
